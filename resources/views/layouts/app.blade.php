@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" /> 
   <link href="{{ asset('/css/app.css') }}" rel="stylesheet" /> 
+  
+  {{-- Dictatorship 5: Centralized HTML structure to keep child views clean --}}
   <title>@yield('title', 'Online Store')</title> 
 </head> 
 <body> 
-<!-- header --> 
+  <!-- header --> 
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4"> 
     <div class="container"> 
       <a class="navbar-brand" href="{{ route('home.index') }}">Online Store</a> 
@@ -21,6 +23,10 @@
           <a class="nav-link active" href="{{ route('home.index') }}">Home</a> 
           <a class="nav-link active" href="{{ route('home.about') }}">About</a> 
           <a class="nav-link active" href="{{ route('product.index') }}">Products</a>
+          
+          {{-- Added the Cart link so users can access Tutorial 3A easily --}}
+          <a class="nav-link active" href="{{ route('cart.index') }}">Cart</a>
+          
           <a class="nav-link active" href="{{ route('home.contact') }}">Contact</a>
         </div> 
       </div> 
@@ -54,4 +60,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"> 
   </script> 
 </body> 
-</html> 
+</html>

@@ -1,7 +1,7 @@
+{{-- Dictatorship 5: HTML code only in views --}}
 @extends('layouts.app')
 
 @section('title', $viewData["title"])
-
 @section('subtitle', $viewData["subtitle"])
 
 @section('content')
@@ -16,19 +16,19 @@
         <div class="col-md-8">
             <div class="card-body">
 
+                {{-- Dictatorship (Encapsulation): Using getters for attributes --}}
                 <h5 class="card-title">
-                    {{ $viewData["product"]["name"] }}
+                    {{ $viewData["product"]->getName() }}
                 </h5>
 
                  <p class="card-text">
-                    {{ $viewData["product"]["price"] }}
+                    {{ $viewData["product"]->getPrice() }}
                 </p> 
 
-
-                @foreach($viewData["product"]->comments as $comment) 
+                {{-- Dictatorship (Relations): Using getter for the relationship --}}
+                @foreach($viewData["product"]->getComments() as $comment) 
                 - {{ $comment->getDescription() }}<br /> 
                 @endforeach 
-
 
             </div>
         </div>

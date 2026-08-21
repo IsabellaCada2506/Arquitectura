@@ -1,3 +1,4 @@
+{{-- Dictatorship 5: HTML code only in views --}}
 @extends('layouts.app') 
 @section('title', $viewData["title"]) 
 @section('subtitle', $viewData["subtitle"]) 
@@ -8,13 +9,14 @@
     <div class="card"> 
       <img src="https://laravel.com/img/logotype.min.svg" class="card-img-top img-card"> 
       <div class="card-body text-center"> 
-        <a href="{{ route('product.show', ['id'=> $product["id"]]) }}" 
-          class="btn bg-primary text-white">{{ $product["name"] }}</a> 
+        
+        {{-- Dictatorship (Encapsulation): Using getters instead of direct array access --}}
+        <a href="{{ route('product.show', ['id'=> $product->getId()]) }}" 
+          class="btn bg-primary text-white">{{ $product->getName() }}</a> 
+          
       </div> 
     </div> 
   </div> 
   @endforeach 
 </div> 
-@endsection 
- 
-
+@endsection

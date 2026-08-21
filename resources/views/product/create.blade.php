@@ -1,3 +1,4 @@
+{{-- Dictatorship 5: HTML code only in views, keeping it clean and reusable --}}
 @extends('layouts.app') 
 @section("title", $viewData["title"]) 
 @section('content') 
@@ -7,6 +8,8 @@
       <div class="card"> 
         <div class="card-header">Create product</div> 
           <div class="card-body"> 
+            
+            {{-- Dictatorship 2: Validation errors from ProductRequest are displayed here --}}
             @if($errors->any()) 
             <ul id="errors" class="alert alert-danger list-unstyled"> 
               @foreach($errors->all() as $error) 
@@ -27,4 +30,4 @@
     </div> 
   </div> 
 </div> 
-@endsection 
+@endsection

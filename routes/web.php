@@ -1,35 +1,33 @@
 <?php
 
+use App\Http\Controllers\CartController;
+// Dictatorship 1: Class import reference instead of string-based routing
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ImageNotDIController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index"); 
- 
-Route::get('/about', function () { 
-    $data1 = "About us - Online Store"; 
-    $data2 = "About us"; 
-    $description = "This is an about page ..."; 
-    $author = "Developed by: Isabella Cadavid Posada"; 
-    return view('home.about')->with("title", $data1) 
-      ->with("subtitle", $data2) 
-      ->with("description", $description) 
-      ->with("author", $author); 
-})->name("home.about"); 
- 
-Route::get('/products', 'App\Http\Controllers\ProductController@index')->name("product.index");
-Route::get('/products/create', 'App\Http\Controllers\ProductController@create')->name("product.create");
-Route::post('/products/save', 'App\Http\Controllers\ProductController@save')->name("product.save");
-Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name("product.show");
+// Home routes
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/about', [HomeController::class, 'about'])->name('home.about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 
-Route::get('/contact', function () {
-    $data1 = "Contact - Online Store";
-    $data2 = "Contact us";
-    $name = "Isabella Cadavid";
-    $address = "Medellín, Colombia";
-    $phone = "300 000 0000";
+// Product routes
+Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('product.create');
+Route::post('/products/save', [ProductController::class, 'save'])->name('product.save');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
 
-    return view('home.contact')->with("title", $data1)
-        ->with("subtitle", $data2)
-        ->with("name", $name)
-        ->with("address", $address)
-        ->with("phone", $phone);
-})->name("home.contact");
+// Cart routes
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart/removeAll/', [CartController::class, 'removeAll'])->name('cart.removeAll');
+
+//  Imagen (DI)
+Route::get('/image', [ImageController::class, 'index'])->name('image.index');
+Route::post('/image/save', [ImageController::class, 'save'])->name('image.save');
+
+// Imagen (Sin DI)
+Route::get('/image-not-di', [ImageNotDIController::class, 'index'])->name('imagenotdi.index');
+Route::post('/image-not-di/save', [ImageNotDIController::class, 'save'])->name('imagenotdi.save');
