@@ -1,20 +1,453 @@
-.bg-secondary { 
-  background-color: #2c3e50 !important; 
-} 
- 
-.copyright { 
-  background-color: #1a252f; 
-} 
- 
-.bg-primary { 
-  background-color: #1abc9c !important; 
-} 
- 
-nav{ 
-  font-weight: 700; 
-} 
- 
-.img-card{ 
-  height: 18vw; 
-  object-fit: cover; 
-} 
+.bg-secondary {
+    background-color: #2c3e50 !important;
+}
+
+.bg-primary {
+    background-color: #1abc9c !important;
+}
+
+.copyright {
+    background-color: #1a252f;
+}
+
+nav {
+    font-weight: 700;
+}
+
+.navbar-brand,
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #1abc9c;
+}
+
+.dropdown-menu {
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(26, 37, 47, 0.18);
+    padding: 8px;
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 10px 14px;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(26, 188, 156, 0.14);
+    color: #117a65;
+}
+
+.img-card {
+    height: 18vw;
+    object-fit: cover;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(26, 188, 156, 0.18),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at top right,
+            rgba(44, 62, 80, 0.13),
+            transparent 32%
+        ),
+        #f4f8f7;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+.human-page {
+    padding: 30px 0 60px;
+}
+
+.human-heading {
+    margin: 0 auto 28px;
+    max-width: 760px;
+    text-align: center;
+}
+
+.human-heading-row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: none;
+    text-align: left;
+}
+
+.human-heading h1 {
+    color: #1a252f;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    margin: 8px 0 12px;
+}
+
+.human-heading p {
+    color: #61717c;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.human-label {
+    background-color: rgba(26, 188, 156, 0.16);
+    border: 1px solid rgba(26, 188, 156, 0.24);
+    border-radius: 999px;
+    color: #117a65;
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 7px 14px;
+    text-transform: uppercase;
+}
+
+.human-card {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(44, 62, 80, 0.11);
+    border-radius: 22px;
+    box-shadow: 0 18px 50px rgba(26, 37, 47, 0.1);
+}
+
+.form-card {
+    margin: 0 auto;
+    max-width: 680px;
+    padding: 32px;
+}
+
+.human-form {
+    display: grid;
+    gap: 22px;
+}
+
+.form-group {
+    display: grid;
+    gap: 8px;
+}
+
+.form-label {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.form-control,
+.form-select {
+    background-color: white;
+    border: 1px solid #cbd5da;
+    border-radius: 12px;
+    color: #2c3e50;
+    min-height: 48px;
+    padding: 11px 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #1abc9c;
+    box-shadow: 0 0 0 0.2rem rgba(26, 188, 156, 0.18);
+}
+
+.form-control::placeholder {
+    color: #89979f;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.human-primary-button {
+    background: linear-gradient(135deg, #1abc9c, #15967d);
+    border: 0;
+    border-radius: 999px;
+    color: white;
+    font-weight: 700;
+    padding: 11px 22px;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.human-primary-button:hover,
+.human-primary-button:focus {
+    background: linear-gradient(135deg, #15967d, #117a65);
+    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.28);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+    border-color: #2c3e50;
+    border-radius: 999px;
+    color: #2c3e50;
+    font-weight: 700;
+    padding: 10px 22px;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+    color: white;
+}
+
+.alert {
+    border: 0;
+    border-radius: 14px;
+}
+
+.alert-heading {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.table-card {
+    overflow: hidden;
+}
+
+.human-table {
+    margin: 0;
+}
+
+.human-table thead th {
+    background-color: #2c3e50;
+    border: 0;
+    color: white;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    padding: 17px;
+    text-transform: uppercase;
+}
+
+.human-table tbody td {
+    border-color: #e3e9eb;
+    color: #2c3e50;
+    padding: 17px;
+}
+
+.human-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.human-table tbody tr:hover {
+    background-color: rgba(26, 188, 156, 0.07);
+}
+
+.human-id {
+    color: #71818a;
+    font-weight: 700;
+}
+
+.human-name {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 700;
+    gap: 8px;
+}
+
+.aura-value {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+/* Required by the exercise for common humans */
+.common-aura {
+    color: #0d6efd;
+}
+
+.hierarchy-badge,
+.boff-badge {
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 6px 11px;
+}
+
+.common-badge {
+    background-color: #dceaff;
+    color: #0756bd;
+}
+
+.moderate-badge {
+    background-color: rgba(44, 62, 80, 0.13);
+    color: #2c3e50;
+}
+
+.legendary-badge {
+    background-color: rgba(26, 188, 156, 0.18);
+    color: #117a65;
+}
+
+.boff-badge {
+    background: linear-gradient(135deg, #2c3e50, #1abc9c);
+    color: white;
+}
+
+.empty-state {
+    padding: 55px 24px;
+    text-align: center;
+}
+
+.empty-state h2 {
+    color: #1a252f;
+    font-weight: 800;
+}
+
+.empty-state p {
+    color: #61717c;
+}
+
+.empty-state-icon {
+    color: #1abc9c;
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.battle-grid {
+    align-items: center;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr auto 1fr;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.contender-card {
+    padding: 34px;
+    text-align: center;
+}
+
+.contender-number {
+    color: #71818a;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.contender-avatar {
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #1abc9c);
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(26, 188, 156, 0.22);
+    color: white;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 900;
+    height: 76px;
+    justify-content: center;
+    margin: 20px auto;
+    width: 76px;
+}
+
+.contender-card h2 {
+    color: #1a252f;
+    font-weight: 800;
+}
+
+.contender-aura {
+    background-color: rgba(26, 188, 156, 0.1);
+    border: 1px solid rgba(26, 188, 156, 0.16);
+    border-radius: 14px;
+    display: grid;
+    margin-top: 20px;
+    padding: 16px;
+}
+
+.contender-aura span {
+    color: #61717c;
+    font-size: 0.85rem;
+}
+
+.contender-aura strong {
+    color: #117a65;
+    font-size: 1.8rem;
+}
+
+.versus {
+    align-items: center;
+    background-color: #2c3e50;
+    border: 4px solid rgba(26, 188, 156, 0.35);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 900;
+    height: 64px;
+    justify-content: center;
+    width: 64px;
+}
+
+.battle-result {
+    background: linear-gradient(135deg, #2c3e50, #1a252f);
+    border-bottom: 5px solid #1abc9c;
+    border-radius: 20px;
+    color: white;
+    margin: 26px auto 0;
+    max-width: 900px;
+    padding: 24px;
+    text-align: center;
+}
+
+.battle-result span {
+    color: #7ce4d0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.battle-result h2 {
+    color: white;
+    font-weight: 800;
+    margin: 8px 0 0;
+}
+
+@media (max-width: 768px) {
+    .human-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .battle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .versus {
+        margin: 0 auto;
+    }
+
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+
+    .human-table thead th,
+    .human-table tbody td {
+        padding: 13px;
+    }
+
+    .img-card {
+        height: 220px;
+    }
+}
