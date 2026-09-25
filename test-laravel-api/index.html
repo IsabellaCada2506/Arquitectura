@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laravel API test</title>
+</head>
+<body>
+    <h1>Products from Laravel API</h1>
+    <pre id="productList">Loading products...</pre>
+
+    <script>
+        const productList = document.getElementById('productList');
+
+        fetch('http://127.0.0.1:8000/api/v3/products')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+
+                return response.json();
+            })
+            .then((products) => {
+                productList.textContent = JSON.stringify(products, null, 2);
+            })
+            .catch((error) => {
+                productList.textContent = `Could not load products: ${error.message}`;
+            });
+    </script>
+</body>
+</html>
